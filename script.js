@@ -1,3 +1,16 @@
+
+document.getElementById("menuMusic").play();
+
+document.getElementById("answerInput").addEventListener("keypress", function(event){
+
+if(event.key === "Enter"){
+
+document.getElementById("submitBtn").click();
+
+}
+
+});
+
 /* QUESTION DATA */
 
 const questions=[
@@ -57,7 +70,10 @@ titleScreen.classList.add("hidden");
 
 game.classList.remove("hidden");
 
-document.body.style.background='url("questions.png") center/contain no-repeat';
+document.body.style.backgroundImage = "url('questions.png')";
+document.body.style.backgroundSize = "contain";
+document.body.style.backgroundPosition = "center";
+document.body.style.backgroundRepeat = "no-repeat";
 
 loadQuestion();
 
@@ -69,7 +85,7 @@ function loadQuestion(){
 
 const q=questions[currentQuestion];
 
-questionText.textContent=q.question;
+questionText.textContent = q.question.toUpperCase();
 
 boxes.innerHTML="";
 
@@ -159,6 +175,8 @@ hintText.textContent=questions[currentQuestion].hint;
 /* FINAL REVEAL */
 
 function showFinal(){
+document.getElementById("menuMusic").pause();
+document.getElementById("finalMusic").play();
 
 game.classList.add("hidden");
 

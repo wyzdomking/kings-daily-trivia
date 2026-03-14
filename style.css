@@ -278,3 +278,17 @@ animation:heartPulse 2s infinite;
 100%{transform:scale(1)}
 
 }
+
+#question{
+
+max-width:700px;
+margin:0 auto 25px auto;
+
+line-height:1.4;
+
+}
+
+#game{
+padding-left:15%;
+padding-right:15%;
+}
