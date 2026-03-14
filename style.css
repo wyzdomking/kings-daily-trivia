@@ -1,0 +1,280 @@
+/* prevent scrolling */
+
+html,body{
+height:100%;
+margin:0;
+overflow:hidden;
+text-align:center;
+font-family: 'Ubuntu', sans-serif;
+}
+
+/* loading background */
+
+body {
+    background-image: url("assets/images/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f5c08c;
+    margin: 0;
+    min-height: 100dvh;
+
+    /* Needed for fade transition */
+    transition: opacity 0.6s ease;
+}
+
+/* center everything */
+
+header, main, section{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+/* hide sections */
+
+.hidden{
+display:none;
+}
+
+/* ------------------------------
+   PLAY BUTTON DEFAULT
+------------------------------ */
+#PLAY {
+    padding: 20px 40px;
+    font-size: 24px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: white;
+    background-color: #541fa9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #3a1375;
+    margin-top: 40dvh;
+    /* smooth hover animation */
+    transition: all 0.15s ease;
+}
+
+#PLAY:hover {
+    background-color: #7c4bd9;
+    box-shadow: none;
+    transform: translateY(3px);
+
+    /* pause pulsing when hovering */
+    animation-play-state: paused;
+}
+/* ------------------------------
+   CLICKED STATE
+------------------------------ */
+
+#PLAY:active {
+    background-color: #7c4bd9;
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+/* ------------------------------
+   FADE OUT TRANSITION
+------------------------------ */
+
+.fade-out {
+    opacity: 0;
+}
+
+/* ------------------------------
+   PLAY BUTTON PULSE ANIMATION
+------------------------------ */
+
+#PLAY {
+    animation: pulseGlow 2.5s infinite;
+}
+
+/* Keyframes for pulsing glow */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 6px 0 #3a1375;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(124, 75, 217, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 6px 0 #3a1375;
+    }
+}
+
+@keyframes pulseGlow{
+
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+
+}
+
+/* question text */
+
+#question{
+font-size:22px;
+margin-bottom:20px;
+}
+
+/* word boxes */
+
+#boxes{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.box{
+
+width:50px;
+height:50px;
+
+background:#333;
+color:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:22px;
+font-weight:bold;
+
+border-radius:5px;
+
+}
+
+/* correct answer */
+
+.correct{
+
+background:green;
+
+animation:pop .3s;
+}
+
+@keyframes pop{
+
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+
+}
+
+/* input */
+
+#answerInput{
+
+padding:10px;
+font-size:18px;
+text-transform:uppercase;
+text-align:center;
+margin-bottom:15px;
+
+}
+
+/* buttons */
+
+.buttons{
+display:flex;
+gap:10px;
+}
+
+button {
+    padding: 10px 10px;
+    font-size: 22px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: white;
+    background-color: #541fa9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #3a1375;
+    margin-top: 10dvh;
+    /* smooth hover animation */
+    transition: all 0.15s ease;
+}
+
+button:hover {
+    background-color: #7c4bd9;
+    box-shadow: none;
+    transform: translateY(3px);
+
+    /* pause pulsing when hovering */
+    animation-play-state: paused;
+}
+
+
+button:active {
+    background-color: #7c4bd9;
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+button {
+    animation: pulseGlow 2.5s infinite;
+}
+
+/* Keyframes for pulsing glow */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 6px 0 #3a1375;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(124, 75, 217, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 6px 0 #3a1375;
+    }
+}
+
+/* swipe transition */
+
+.swipe{
+animation:swipe .5s;
+}
+
+@keyframes swipe{
+
+0%{transform:translateX(100px);opacity:0}
+100%{transform:translateX(0);opacity:1}
+
+}
+
+/* hearts */
+
+#hearts{
+margin-top:20px;
+}
+
+.heart{
+
+font-size:30px;
+margin:5px;
+animation:heartPulse 2s infinite;
+}
+
+@keyframes heartPulse{
+
+0%{transform:scale(1)}
+50%{transform:scale(1.3)}
+100%{transform:scale(1)}
+
+}
